@@ -486,6 +486,8 @@ namespace LutorGames.SaveSystem
         public Action<T> OnValueChanged;
 
         private bool _initialised;
+        private bool _isValidInitialization => _initialisedTime > Binary_SaveSystem.AwakeTime;
+        private DateTime _initialisedTime;
         private readonly SaveableValue<T> SaveableValue = new();
 
         public T Value
@@ -499,7 +501,7 @@ namespace LutorGames.SaveSystem
             }
             get
             {
-                if (!_initialised)
+                if (!_initialised || !_isValidInitialization)
                 {
                     Initialise();
                 }
@@ -545,6 +547,8 @@ namespace LutorGames.SaveSystem
             OnValueChanged?.Invoke(Value);
 
             _initialised = true;
+
+            _initialisedTime = DateTime.Now;
         }
 
         private bool IsValidName()

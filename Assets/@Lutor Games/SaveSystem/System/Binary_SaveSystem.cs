@@ -29,6 +29,8 @@ namespace PrivateLT.NOACCESS
         public static Action OnSave;
         public static Action OnIntantSave;
 
+        public static DateTime AwakeTime;
+
         public static Binary_SaveSystem Instance
         {
             get
@@ -61,6 +63,8 @@ namespace PrivateLT.NOACCESS
             {
                 Destroy(gameObject);
             }
+
+            AwakeTime = DateTime.Now;
         }
 
         private void Start()
