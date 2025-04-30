@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 using LutorGames.SaveSystem;
 using System;
 using System.Collections.Generic;
@@ -15,20 +14,13 @@ public class TrainSetting
     public float Next_Value => Levels[Level.Value + 1];
 }
 
-=======
-using UnityEngine;
-
->>>>>>> origin/master
 [CreateAssetMenu(fileName = "TrainUpgradesSO", menuName = "Scriptable Objects/TrainUpgradesSO")]
 public class TrainSettings_SO : ScriptableObject
 {
     public string Name;
-<<<<<<< HEAD
     public TrainSetting MaxSpeed;
     public TrainSetting Acceleration;
     public TrainSetting Steering;
 
-=======
     public UpgradeSettings_Data UpgradeSettings;
->>>>>>> origin/master
 }
