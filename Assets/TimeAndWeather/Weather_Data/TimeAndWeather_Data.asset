@@ -15,13 +15,11 @@ MonoBehaviour:
   WeatherDataList:
   - {fileID: 11400000, guid: 80dcb2527f981c94ca188a71a5158a91, type: 2}
   - {fileID: 11400000, guid: 0470dfbf5cd31994588177e171b63f5a, type: 2}
+  - {fileID: 11400000, guid: 25935b0e5e5db9c4e8ac667a70489ec8, type: 2}
   TimeIntervalsArray:
   - TimeOfDay: 0
-    IntervalStart: 0
-    IntervalEnd: 7
+    IntervalStart: 24
+    IntervalEnd: 18
   - TimeOfDay: 1
-    IntervalStart: 7
-    IntervalEnd: 15
-  - TimeOfDay: 1
-    IntervalStart: 15
+    IntervalStart: 18
     IntervalEnd: 24

@@ -4,8 +4,7 @@ using UnityEngine;
 public enum TimeOfDay
 {
     morning,
-    midday,
-    afternoon,
+    evening,
 };
 
 [System.Serializable]

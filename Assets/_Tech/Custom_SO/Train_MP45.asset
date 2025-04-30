@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Train_MP45
   m_EditorClassIdentifier: 
   Name: MP45
+<<<<<<< HEAD
   MaxSpeed:
     Level:
       Id: MaxSpeed
@@ -28,3 +29,6 @@ MonoBehaviour:
       Id: 
       DefaultValue: 0
     Levels: []
+=======
+  UpgradeSettings: {fileID: 11400000, guid: 5aa1f345ed6642049848847ed7152ee5, type: 2}
+>>>>>>> origin/master

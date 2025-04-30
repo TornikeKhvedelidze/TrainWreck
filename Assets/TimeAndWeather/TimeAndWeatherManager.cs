@@ -1,11 +1,14 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class TimeAndWeatherManager : MonoBehaviour
 {
-    [SerializeField] TimeAndWeatherData Data;
+    [SerializeField] TimeAndWeatherData_SO Data;
+    [SerializeField] private Vector3 particleOffset;
 
     private ITimeProvider _timeProvider;
     private IWeatherProvider _weatherProvider;
+    private Transform _cameraTransform; 
     private int _currentTime;
 
     #region Initialization
@@ -18,10 +21,11 @@ public class TimeAndWeatherManager : MonoBehaviour
     {
         _timeProvider = new PhoneClockTimeProvider();
         _weatherProvider = new RandomWeatherProvider();
+        _cameraTransform = Camera.main.transform;
         _currentTime = _timeProvider.GetCurrentTime().Hour;
 
         InitializeWeather();
-        UpdateTimeOfDayVisuals(DetermineTimeOfDay(7));
+        UpdateTimeOfDayVisuals(DetermineTimeOfDay(_currentTime));
     }
     #endregion
 
@@ -33,10 +37,12 @@ public class TimeAndWeatherManager : MonoBehaviour
 
     private void SetWeather(WeatherType weatherType)
     {
-        WeatherData weatherData = Data.WeatherDataList.Find(x => x.WeatherType == weatherType);
+        WeatherData_SO weatherData = Data.WeatherDataList.Find(x => x.WeatherType == weatherType);
         if (weatherData != null)
         {
             RenderSettings.skybox = weatherData.SkyBoxMaterial;
+            if(weatherData.WeatherParticles == null) return;
+            Instantiate(weatherData.WeatherParticles, _cameraTransform.position + particleOffset,quaternion.identity, _cameraTransform);
         }
     }
     #endregion
@@ -61,11 +67,7 @@ public class TimeAndWeatherManager : MonoBehaviour
                 Debug.Log("Switch to Morning visuals");
                 RenderSettings.skybox.SetFloat("_Exposure", 1.5f);
                 break;
-            case TimeOfDay.midday:
-                Debug.Log("Switch to midday visuals");
-                RenderSettings.skybox.SetFloat("_Exposure", 1f);
-                break;
-            case TimeOfDay.afternoon:
+            case TimeOfDay.evening:
                 Debug.Log("Switch to afternoon visuals");
                 RenderSettings.skybox.SetFloat("_Exposure", 0.3f);
                 break;

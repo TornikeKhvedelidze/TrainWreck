@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92d743f64fbb8c64db5d1416ecce9b95, type: 3}
-  m_Name: WeatherData_Rainy
+  m_Name: WeatherData_Snowy
   m_EditorClassIdentifier: 
-  WeatherType: 1
+  WeatherType: 2
   SkyBoxMaterial: {fileID: 2100000, guid: e2fecb9d4b191264b874614409196e68, type: 2}
-  WeatherParticles: {fileID: 2852836833974055969, guid: 1032c9c97cd094b45abd754046a69ef3, type: 3}
+  WeatherParticles: {fileID: 4803627483740197717, guid: 9f77cea5cd1be224fae1f740c114a899, type: 3}
