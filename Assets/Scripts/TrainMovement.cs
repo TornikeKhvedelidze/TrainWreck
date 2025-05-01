@@ -62,7 +62,7 @@ public class TrainMovement : MonoBehaviour
             DOTween.Sequence()
                 .AppendCallback(() => wagon.DOKill())
                 .AppendInterval(_delay * i)
-                .Append(wagon.DORotate(new Vector3(0, 0, -turn), _moveDuration * 0.5f).SetEase(_ease))
+                .Append(wagon.DORotate(new Vector3(0, turn, 0), _moveDuration * 0.5f).SetEase(_ease))
                 .Join(wagon.DOMove(targetPos, _moveDuration).SetEase(Ease.OutQuad))
                 .Append(wagon.DORotate(Vector3.zero, _moveDuration * 0.5f).SetEase(_ease));
         }
