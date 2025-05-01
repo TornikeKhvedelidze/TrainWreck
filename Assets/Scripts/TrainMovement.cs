@@ -9,6 +9,7 @@ public class TrainMovement : MonoBehaviour
     //ლიანდაგის ინდექსი რომელზეადაც მატარებელი დგას
     [SerializeField] private int _currentLineIndex = 1;
     //დრო ერთი ზოლიდან მეორე გადასასვლელად
+    [SerializeField] private float _turnAngle = 15f;
     [SerializeField] private float _moveDuration = 0.15f;
     [SerializeField] private float _delay = 0.02f;
     [SerializeField] List<Transform> _wagons;
@@ -33,7 +34,7 @@ public class TrainMovement : MonoBehaviour
 
     private void Initialise()
     {
-        MoveToCurrentLine();
+        MoveToCurrentLine(_turnAngle);
     }
 
     private void Move(int value)
@@ -42,11 +43,11 @@ public class TrainMovement : MonoBehaviour
 
         _currentLineIndex += value;
 
-        MoveToCurrentLine();
+        MoveToCurrentLine(_turnAngle * value);
     }
 
     //dotween-ის გამოყენება გადაადგილებისთვის
-    void MoveToCurrentLine()
+    void MoveToCurrentLine(float turn)
     {
         Vector3 targetPosition = new Vector3(_currentLineIndex * _railDistance, transform.position.y, transform.position.z);
 
@@ -58,7 +59,9 @@ public class TrainMovement : MonoBehaviour
             DOTween.Sequence()
                 .AppendCallback(() => wagon.DOKill())
                 .AppendInterval(_delay * i)
-                .Append(wagon.DOMove(targetPos, _moveDuration).SetEase(Ease.OutQuad));
+                .Append(wagon.DORotate(new Vector3(0, 0, -turn), _moveDuration * 0.5f).SetEase(Ease.OutQuad))
+                .Join(wagon.DOMove(targetPos, _moveDuration).SetEase(Ease.OutQuad))
+                .Append(wagon.DORotate(Vector3.zero, _moveDuration * 0.5f).SetEase(Ease.InOutQuad));
         }
 
         //transform.DOMove(targetPosition, _moveDuration).SetEase(Ease.OutQuad);
