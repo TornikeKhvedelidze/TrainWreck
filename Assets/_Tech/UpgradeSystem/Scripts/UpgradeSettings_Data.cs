@@ -14,7 +14,6 @@ public class PayingOption
 public class PriceAndValue
 {
     public float Value;
-    public bool PayWithAd;
     public List<PayingOption> PayingOptions;
 
     public bool Price(out PayingOption payingOption)

@@ -18,38 +18,32 @@ MonoBehaviour:
       DefaultValue: 0
     Settings:
     - Value: 1
-      PayWithAd: 0
       PayingOptions:
       - Currency: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
         Amount: 100
       - Currency: {fileID: 11400000, guid: dca282e2a4419c547adf95d94b2a1223, type: 2}
         Amount: 1
     - Value: 2
-      PayWithAd: 0
       PayingOptions:
       - Currency: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
         Amount: 600
       - Currency: {fileID: 11400000, guid: dca282e2a4419c547adf95d94b2a1223, type: 2}
         Amount: 2
     - Value: 4
-      PayWithAd: 0
       PayingOptions:
       - Currency: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
         Amount: 1500
       - Currency: {fileID: 11400000, guid: dca282e2a4419c547adf95d94b2a1223, type: 2}
         Amount: 1
     - Value: 7
-      PayWithAd: 0
       PayingOptions:
       - Currency: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
         Amount: 3000
     - Value: 11
-      PayWithAd: 0
       PayingOptions:
       - Currency: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
         Amount: 5000
     - Value: 23
-      PayWithAd: 0
       PayingOptions:
       - Currency: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
         Amount: 6000
@@ -58,31 +52,24 @@ MonoBehaviour:
       DefaultValue: 0
     Settings:
     - Value: 60
-      PayWithAd: 0
       PayingOptions:
       - Currency: {fileID: 11400000, guid: dca282e2a4419c547adf95d94b2a1223, type: 2}
         Amount: 1
     - Value: 200
-      PayWithAd: 0
       PayingOptions:
       - Currency: {fileID: 11400000, guid: dca282e2a4419c547adf95d94b2a1223, type: 2}
         Amount: 1
     - Value: 600
-      PayWithAd: 0
       PayingOptions:
       - Currency: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
         Amount: 600
       - Currency: {fileID: 11400000, guid: dca282e2a4419c547adf95d94b2a1223, type: 2}
         Amount: 1
     - Value: 1200
-      PayWithAd: 0
       PayingOptions: []
     - Value: 11
-      PayWithAd: 0
       PayingOptions: []
     - Value: 2600
-      PayWithAd: 0
       PayingOptions: []
     - Value: 10000
-      PayWithAd: 0
       PayingOptions: []
