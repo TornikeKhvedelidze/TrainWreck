@@ -61,15 +61,15 @@ Material:
     - _Color: 0
     - _ENABLEBENDING: 1
     - _Float: 1
-    - _Lerp: 0
+    - _Lerp: -0.36
     - _Power: 1.32
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Sideways: 1.59
-    - _SpiralRadius: 2.57
-    - _SpiralStrenght: 0.11
+    - _Sideways: -14.06
+    - _SpiralRadius: 0.13
+    - _SpiralStrenght: 3.72
     - _Threshold: -656.56
-    - _backwards: -1.82
+    - _backwards: -0.62
     m_Colors:
     - _Color: {r: 0.6452829, g: 0.6452829, b: 0.6452829, a: 1}
     - _Curve: {r: 0, g: 0, b: 0, a: 0}
