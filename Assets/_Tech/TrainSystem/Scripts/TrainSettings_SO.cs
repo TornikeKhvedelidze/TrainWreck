@@ -18,9 +18,6 @@ public class TrainSetting
 public class TrainSettings_SO : ScriptableObject
 {
     public string Name;
-    public TrainSetting MaxSpeed;
-    public TrainSetting Acceleration;
-    public TrainSetting Steering;
 
     public UpgradeSettings_Data UpgradeSettings;
 }

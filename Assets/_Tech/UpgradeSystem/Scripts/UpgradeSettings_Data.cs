@@ -4,10 +4,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
+public class PayingOption
+{
+    public Currency_SO Currency;
+    public float Amount;
+}
+
+[Serializable]
 public class PriceAndValue
 {
     public float Value;
-    public float Price;
+    public bool PayWithAd;
+    public List<PayingOption> PayingOptions;
+
+    public bool Price(out PayingOption payingOption)
+    {
+        payingOption = PayingOptions[0];
+
+        foreach (var option in PayingOptions)
+        {
+            if (!option.Currency.AbleToPay(option.Amount)) continue;
+
+            payingOption = option;
+
+            return true;
+        }
+
+        return false;
+    }
 }
 
 [Serializable]
@@ -22,10 +46,19 @@ public class UpgradeSetting
     public PriceAndValue Current_Value => Settings[Level.Value];
     public PriceAndValue Next_Value => Settings[IsMaxed ? Level.Value : Level.Value + 1];
 
-    public bool TryUpgrade()
+    public bool TryUpgrade(PayingOption payingOption)
     {
-        //TODO: add paying system
+        if (IsMaxed) return false;
 
+        if (!payingOption.Currency.TryPay(payingOption.Amount)) return false;
+
+        Upgrade();
+
+        return true;
+    }
+
+    public bool Upgrade()
+    {
         if (IsMaxed) return false;
 
         Level.Value += 1;

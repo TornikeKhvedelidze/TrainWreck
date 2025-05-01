@@ -8,12 +8,17 @@ public class UpgradeCard : MonoBehaviour
     [SerializeField] private TMP_Text NameText;
     [SerializeField] private TMP_Text UpgradeText;
     [SerializeField] private TMP_Text PriceText;
+    [SerializeField] private Image PriceIcon;
 
     private UpgradeSetting _upgradeSetting;
+    private PayingOption _payingOption;
+    private PriceAndValue _currentPriceAndValue => _upgradeSetting.Current_Value;
 
     private void Start()
     {
         _upgradeButton.onClick.AddListener(() => TryUpgrade());
+
+        CurrencyManager.OnAnyValuesChanged += UpdateSettings;
     }
 
     public void Initialise(UpgradeSetting setting)
@@ -25,7 +30,7 @@ public class UpgradeCard : MonoBehaviour
 
     public bool TryUpgrade()
     {
-        if (!_upgradeSetting.TryUpgrade())
+        if (!_upgradeSetting.TryUpgrade(_payingOption))
         {
             NotEnoughMoneyMessage();
             return false;
@@ -41,8 +46,12 @@ public class UpgradeCard : MonoBehaviour
         if (_upgradeSetting == null) return;
 
         NameText.text = _upgradeSetting.Name;
-        UpgradeText.text = $"+{_upgradeSetting.Next_Value.Value - _upgradeSetting.Current_Value.Value}";
-        PriceText.text = $"{_upgradeSetting.Current_Value.Price}$";
+        UpgradeText.text = $"+{_upgradeSetting.Next_Value.Value - _currentPriceAndValue.Value}";
+
+        _currentPriceAndValue.Price(out _payingOption);
+
+        PriceText.text = _payingOption.Amount.ToString();
+        PriceIcon.sprite = _payingOption.Currency.Icon;
     }
 
     private void NotEnoughMoneyMessage()

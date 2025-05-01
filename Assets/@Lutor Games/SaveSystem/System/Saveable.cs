@@ -495,7 +495,7 @@ namespace LutorGames.SaveSystem
             set
             {
                 SaveableValue.Value = value;
-                OnValueChanged?.Invoke(Value);
+                OnValueChanged?.Invoke(value);
                 if (!_initialised) return;
                 Save();
             }
@@ -544,7 +544,7 @@ namespace LutorGames.SaveSystem
             SaveableValue.Load(out var data);
             Value = data.Value;
 
-            OnValueChanged?.Invoke(Value);
+            OnValueChanged?.Invoke(data.Value);
 
             _initialised = true;
 
