@@ -4,44 +4,38 @@ using UnityEngine;
 public class TrainMovement : MonoBehaviour
 {
     //კონკრეტული მანძილი ლიანდაგებს შორის
-    private float[] linesX = new float[] { -2f, 0f, 2f };
+    private float _railDistance = 2;
     //ლიანდაგის ინდექსი რომელზეადაც მატარებელი დგას
-    private int currentLineIndex = 1;
+    private int _currentLineIndex = 1;
     //დრო ერთი ზოლიდან მეორე გადასასვლელად
-    private float moveDuration = 0.5f;
+    private float _moveDuration = 0.5f;
 
     //მარჯვენა/მარცხენა ღილაკებით კონტროლი
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            MoveLeft();
+            Move(-1);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            MoveRight();
+            Move(1);
         }
     }
-    void MoveLeft()
+
+    private void Move(int value)
     {
-        if (currentLineIndex > 0)
-        {
-            currentLineIndex--;
-            MoveToCurrentLine();
-        }
+        if (Mathf.Abs(_currentLineIndex + value) > 1) return;
+
+        _currentLineIndex += value;
+
+        MoveToCurrentLine();
     }
-    void MoveRight()
-    {
-        if (currentLineIndex < 2)
-        {
-            currentLineIndex++;
-            MoveToCurrentLine();
-        }
-    }
+
     //dotween-ის გამოყენება გადაადგილებისთვის
     void MoveToCurrentLine()
     {
-        Vector3 targetPosition = new Vector3(linesX[currentLineIndex], transform.position.y, transform.position.z);
-        transform.DOMove(targetPosition, moveDuration).SetEase(Ease.OutQuad);
+        Vector3 targetPosition = new Vector3(_currentLineIndex * _railDistance, transform.position.y, transform.position.z);
+        transform.DOMove(targetPosition, _moveDuration).SetEase(Ease.OutQuad);
     }
 }
