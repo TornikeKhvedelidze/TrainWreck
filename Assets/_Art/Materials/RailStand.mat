@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wagon
+  m_Name: RailStand
   m_Shader: {fileID: -6465566751694194690, guid: 7d731d1a9161bb54e94ee3823055c296, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -139,8 +139,8 @@ Material:
     - _ZWrite: 1
     - _backwards: -1.82
     m_Colors:
-    - _BaseColor: {r: 0.6509804, g: 0.37579426, b: 0.2862745, a: 1}
-    - _Color: {r: 0.6509804, g: 0.37579423, b: 0.28627446, a: 1}
+    - _BaseColor: {r: 0.4716981, g: 0.30755427, b: 0.20247419, a: 1}
+    - _Color: {r: 0.4716981, g: 0.30755422, b: 0.20247415, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
