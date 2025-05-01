@@ -24,8 +24,7 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 7d731d1a9161bb54e94ee3823055c296, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - ENABLE_BENDING
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _ENABLEBENDING
   m_LightmapFlags: 4
@@ -57,23 +56,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - ENABLE_BENDING: 1
-    - _Backwards: 0
-    - _BendingStrenght: 1.65
+    - ENABLE_BENDING: 0
+    - _Backwards: -0.05
+    - _BendingStrenght: 2.69
     - _Color: 0
     - _ENABLEBENDING: 1
     - _Float: 1
-    - _Lerp: 0
+    - _Lerp: 1
     - _Power: 1.32
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RotationSpeed: 0.27
-    - _Sideways: 1.59
+    - _RotationSpeed: 0.1
+    - _Sideways: -0.48
     - _SpiralRadius: 2.57
     - _SpiralSpeed: 1
     - _SpiralStrenght: 0.11
-    - _SprialFrequency: 1
-    - _SprialStrenght: 0.77
+    - _SprialFrequency: 0.51
+    - _SprialStrenght: 1.25
+    - _SprialTwist: 0.88
     - _Threshold: -656.56
     - _backwards: -1.82
     m_Colors:
