@@ -6,13 +6,16 @@ public class TrainMovement : MonoBehaviour
 {
     //კონკრეტული მანძილი ლიანდაგებს შორის
     [SerializeField] private float _railDistance = 2;
-    //ლიანდაგის ინდექსი რომელზეადაც მატარებელი დგას
-    [SerializeField] private int _currentLineIndex = 1;
     //დრო ერთი ზოლიდან მეორე გადასასვლელად
     [SerializeField] private float _turnAngle = 15f;
     [SerializeField] private float _moveDuration = 0.15f;
     [SerializeField] private float _delay = 0.02f;
+    [SerializeField] private int _railwayAmount;
+    [SerializeField] private Ease _ease;
     [SerializeField] List<Transform> _wagons;
+
+    //ლიანდაგის ინდექსი რომელზეადაც მატარებელი დგას
+    private int _currentLineIndex = 0;
 
     private void Start()
     {
@@ -34,7 +37,7 @@ public class TrainMovement : MonoBehaviour
 
     private void Initialise()
     {
-        MoveToCurrentLine(_turnAngle);
+        MoveToCurrentLine();
     }
 
     private void Move(int value)
@@ -47,7 +50,7 @@ public class TrainMovement : MonoBehaviour
     }
 
     //dotween-ის გამოყენება გადაადგილებისთვის
-    void MoveToCurrentLine(float turn)
+    void MoveToCurrentLine(float turn = 0)
     {
         Vector3 targetPosition = new Vector3(_currentLineIndex * _railDistance, transform.position.y, transform.position.z);
 
@@ -59,9 +62,9 @@ public class TrainMovement : MonoBehaviour
             DOTween.Sequence()
                 .AppendCallback(() => wagon.DOKill())
                 .AppendInterval(_delay * i)
-                .Append(wagon.DORotate(new Vector3(0, 0, -turn), _moveDuration * 0.5f).SetEase(Ease.OutQuad))
+                .Append(wagon.DORotate(new Vector3(0, 0, -turn), _moveDuration * 0.5f).SetEase(_ease))
                 .Join(wagon.DOMove(targetPos, _moveDuration).SetEase(Ease.OutQuad))
-                .Append(wagon.DORotate(Vector3.zero, _moveDuration * 0.5f).SetEase(Ease.InOutQuad));
+                .Append(wagon.DORotate(Vector3.zero, _moveDuration * 0.5f).SetEase(_ease));
         }
 
         //transform.DOMove(targetPosition, _moveDuration).SetEase(Ease.OutQuad);
