@@ -730,6 +730,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0260ab5d774faa94f992801a63f2b06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _railDistance: 2
+  _currentLineIndex: 1
+  _turnAngle: 15
+  _moveDuration: 0.15
+  _delay: 0.02
+  _ease: 7
   _wagons:
   - {fileID: 335702131}
   - {fileID: 1361125252}
