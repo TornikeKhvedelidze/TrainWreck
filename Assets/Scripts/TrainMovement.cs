@@ -1,5 +1,7 @@
 ﻿using DG.Tweening;
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class TrainMovement : MonoBehaviour
 {
@@ -8,7 +10,9 @@ public class TrainMovement : MonoBehaviour
     //ლიანდაგის ინდექსი რომელზეადაც მატარებელი დგას
     private int _currentLineIndex = 1;
     //დრო ერთი ზოლიდან მეორე გადასასვლელად
-    private float _moveDuration = 0.5f;
+    private float _moveDuration = 0.15f;
+    private float _delay = 0.02f;
+    [SerializeField] List<Transform> _wagons;
 
     //მარჯვენა/მარცხენა ღილაკებით კონტროლი
     void Update()
@@ -36,6 +40,19 @@ public class TrainMovement : MonoBehaviour
     void MoveToCurrentLine()
     {
         Vector3 targetPosition = new Vector3(_currentLineIndex * _railDistance, transform.position.y, transform.position.z);
-        transform.DOMove(targetPosition, _moveDuration).SetEase(Ease.OutQuad);
+
+        Sequence moveSequence = DOTween.Sequence();
+
+        for (int i = 0; i < _wagons.Count; i++)
+        {
+            Transform wagon = _wagons[i];
+            Vector3 targetPos = new Vector3(targetPosition.x, wagon.position.y, wagon.position.z);
+
+            moveSequence.AppendCallback(() => wagon.DOKill());
+            moveSequence.Append(wagon.DOMove(targetPos, _moveDuration).SetEase(Ease.OutQuad));
+            moveSequence.AppendInterval(_delay);
+        }
+
+        //transform.DOMove(targetPosition, _moveDuration).SetEase(Ease.OutQuad);
     }
 }
