@@ -58,15 +58,21 @@ Material:
     m_Ints: []
     m_Floats:
     - ENABLE_BENDING: 1
+    - _BendingStrenght: 1.6
+    - _Color: 0
     - _ENABLEBENDING: 1
     - _Float: 1
-    - _Power: 2
+    - _Lerp: 0
+    - _Power: 1.32
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Sideways: 2.38
+    - _Sideways: 35.31
+    - _SpiralRadius: 0.37
+    - _SpiralStrenght: 5.03
     - _Threshold: -656.56
-    - _backwards: -0.09
+    - _backwards: -1
     m_Colors:
+    - _Color: {r: 0.6452829, g: 0.6452829, b: 0.6452829, a: 1}
     - _Curve: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
