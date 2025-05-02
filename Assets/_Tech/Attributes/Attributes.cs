@@ -28,13 +28,11 @@ public static class Attributes
 
     public static Vector3 RandomBetweenVector3(this Vector3 start, Vector3 end)
     {
-        Vector3 min = Vector3.Min(start, end);
-        Vector3 max = Vector3.Max(start, end);
+        var distance = Vector3.Distance(start, end);
+        var direction = (end - start).normalized;
 
-        return new Vector3(
-            Random.Range(min.x, max.x),
-            Random.Range(min.y, max.y),
-            Random.Range(min.z, max.z)
-        );
+        var randomValue = Random.Range(0, distance);
+
+        return start + direction * randomValue;
     }
 }
