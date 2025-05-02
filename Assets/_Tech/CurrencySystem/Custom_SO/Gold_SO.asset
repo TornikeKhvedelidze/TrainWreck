@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ValueSaveable:
     Id: Gold
-    DefaultValue: 1200
+    DefaultValue: 99
   Icon: {fileID: -739058197, guid: 05524cc79c11232459f2a00c52a30328, type: 3}

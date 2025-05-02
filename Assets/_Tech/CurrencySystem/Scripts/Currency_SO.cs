@@ -6,8 +6,10 @@ using UnityEngine;
 public class Currency_SO : RewardSO
 {
     public Float_Saveable ValueSaveable;
+    public float valuetest;
     public Sprite Icon;
     public float Value => ValueSaveable.Value;
+
     public Action<float> OnValueChanged
     {
         get => ValueSaveable.OnValueChanged;

@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Chest_SO
   m_EditorClassIdentifier: 
   rarity: 0
-  chestRewardInfo: []
+  chestRewardInfo:
+    elements:
+    - Element: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
+      Weight: 30.9
+    - Element: {fileID: 11400000, guid: 9eeb94dad0645f847b2514bb482934cd, type: 2}
+      Weight: 85.2

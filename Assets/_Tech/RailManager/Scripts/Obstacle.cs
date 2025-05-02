@@ -7,7 +7,7 @@ public class Obstacle : MonoBehaviour
 
     public void Initialsie(Vector3 position, Transform parent = null)
     {
-        transform.position = position;
+        transform.SetPositionAndRotation(position, parent.rotation);
         transform.parent = parent;
 
         gameObject.SetActive(true);

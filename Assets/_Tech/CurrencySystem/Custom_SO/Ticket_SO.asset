@@ -12,7 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad791b87ca36b54baca436b149e9778, type: 3}
   m_Name: Ticket_SO
   m_EditorClassIdentifier: 
+  rewardName: 
+  RewardPrefab: {fileID: 0}
   ValueSaveable:
     Id: TicketTest
     DefaultValue: 1200
+  valuetest: 0
   Icon: {fileID: -739058197, guid: 05524cc79c11232459f2a00c52a30328, type: 3}
+  IsAchieved:
+    Id: IsAchieved
+    DefaultValue: 1
+  Position:
+    Id: PositionTest\
+    DefaultValue:
+      x: 7
+      y: 5
+      z: 6

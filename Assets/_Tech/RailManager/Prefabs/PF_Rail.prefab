@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1819a963c1c37a140b1455ed770139d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _railVisual: {fileID: 2783082325636225779}
+  _railVisual: {fileID: 4723227170131639136}
   _obstaclePointStart: {fileID: 1119870700007014760}
   _obstaclePointEnd: {fileID: 1275054729937125247}
 --- !u!1 &5625883617583917465
@@ -106,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 5888172366967132247}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 61.5}
+  m_LocalPosition: {x: 0, y: 0, z: 42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -160,6 +160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3113860925973364237, guid: 760a6056d18243c4c8b2d79cac1f2dd4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5486950826901512094, guid: 760a6056d18243c4c8b2d79cac1f2dd4, type: 3}
       propertyPath: m_Name
       value: PFA_Rail
@@ -169,9 +173,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 760a6056d18243c4c8b2d79cac1f2dd4, type: 3}
---- !u!1 &2783082325636225779 stripped
+--- !u!1 &4723227170131639136 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5486950826901512094, guid: 760a6056d18243c4c8b2d79cac1f2dd4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3113860925973364237, guid: 760a6056d18243c4c8b2d79cac1f2dd4, type: 3}
   m_PrefabInstance: {fileID: 7690721089826522477}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8274481744116875161 stripped

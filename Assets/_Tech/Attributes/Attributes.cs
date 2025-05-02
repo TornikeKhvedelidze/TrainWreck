@@ -13,13 +13,14 @@ public class WeightedElements<T>
         return elements.GetRandomElement();
     }
 }
+
 [Serializable]
 public class WeightedElement<T>
 {
     public T Element;
     [Range(0f, 100f)]
     public float Weight;
-} 
+}
 
 public static class Attributes
 {
@@ -27,7 +28,7 @@ public static class Attributes
     {
         return list[Random.Range(0, list.Count)];
     }
-    
+
     public static T GetRandomElement<T>(this List<WeightedElement<T>> elements)
     {
         float totalWeight = 0f;
@@ -53,9 +54,9 @@ public static class Attributes
                 return element.Element;
             }
         }
-        
+
         return elements[elements.Count - 1].Element;
-    } 
+    }
 
     public static List<T> RandomElementsFromList<T>(this List<T> sourceList, int amountToChoose)
     {

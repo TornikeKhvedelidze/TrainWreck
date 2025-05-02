@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed0ca941e9216d45ac0f11518db9d27, type: 3}
-  m_Name: RareChest
+  m_Script: {fileID: 11500000, guid: 2b4ecdbcc4b829947b80e6d4cfb12e7c, type: 3}
+  m_Name: EndlessSpawnObjects_Data
   m_EditorClassIdentifier: 
-  rarity: 4
-  chestRewardInfo:
+  _datal:
     elements:
-    - Element: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
+    - Element: {fileID: 0}
       Weight: 0

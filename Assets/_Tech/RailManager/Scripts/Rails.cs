@@ -1,13 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rails : MonoBehaviour
+public class Rails : EndlessSpawnObject
 {
     [SerializeField] private List<Rail> _rails;
 
-    public void UpdatePosition(Vector3 position)
+    public override void Respawn()
     {
-        transform.position = position;
+        base.Respawn();
+
+        UpdateObstacle();
     }
 
     public void UpdateObstacle()
