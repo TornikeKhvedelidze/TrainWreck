@@ -7,7 +7,7 @@ public enum WeatherType
     Snowy
 };
 
-[CreateAssetMenu(fileName = "WeatherData", menuName = "WeatherData", order = 1)]
+[CreateAssetMenu(fileName = "WeatherData", menuName = "Scriptable Objects/WeatherData", order = 1)]
 public class WeatherData_SO : ScriptableObject
 {
     public WeatherType WeatherType;

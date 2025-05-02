@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Currency_SO", menuName = "Scriptable Objects/Currency_SO")]
-public class Currency_SO : ScriptableObject
+public class Currency_SO : RewardSO
 {
     public Float_Saveable ValueSaveable;
     public Sprite Icon;
