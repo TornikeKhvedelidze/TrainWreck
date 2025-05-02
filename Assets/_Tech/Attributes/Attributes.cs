@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
+[Serializable]
 public class WeightedElements<T>
 {
     public List<WeightedElement<T>> elements = new();
@@ -10,6 +13,7 @@ public class WeightedElements<T>
         return elements.GetRandomElement();
     }
 }
+[Serializable]
 public class WeightedElement<T>
 {
     public T Element;
