@@ -6,6 +6,35 @@ public static class Attributes
     {
         return list[Random.Range(0, list.Count)];
     }
+    
+    public static T GetRandomElement<T>(this List<WeightedElement<T>> elements)
+    {
+        float totalWeight = 0f;
+        foreach (var element in elements)
+        {
+            totalWeight += element.Weight;
+        }
+
+        if (totalWeight <= 0f)
+        {
+            Debug.LogWarning("Total weight is zero or negative.");
+            return default;
+        }
+
+        float randomValue = Random.Range(0f, totalWeight);
+        float cumulative = 0f;
+
+        foreach (var element in elements)
+        {
+            cumulative += element.Weight;
+            if (randomValue <= cumulative)
+            {
+                return element.Element;
+            }
+        }
+        
+        return elements[elements.Count - 1].Element;
+    } 
 
     public static List<T> RandomElementsFromList<T>(this List<T> sourceList, int amountToChoose)
     {
