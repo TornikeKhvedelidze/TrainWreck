@@ -1,17 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class WeightedElements<T>
+{
+    public List<WeightedElement<T>> elements = new();
 
+    public T GetRandomElement()
+    {
+        return elements.GetRandomElement();
+    }
+}
 public class WeightedElement<T>
 {
     public T Element;
     [Range(0f, 100f)]
     public float Weight;
-
-    public void GetrandomElement()
-    {
-
-    }
 } 
 
 public static class Attributes
