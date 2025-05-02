@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: Obstacles_Data
   m_EditorClassIdentifier: 
   obstacles:
-  - Name: Basic
-    RemovesRail: 0
-    GameObject: {fileID: 1892081491214616193, guid: 9f8724b7733adae4d916ca32cc3c2a77, type: 3}
-  - Name: Basic2
-    RemovesRail: 0
-    GameObject: {fileID: 5766207394218327716, guid: d1a6de22fc5fecb4989924a75cc73b7d, type: 3}
+  - {fileID: 7627597793253781045, guid: 9f8724b7733adae4d916ca32cc3c2a77, type: 3}
+  - {fileID: 6744352653623546819, guid: d1a6de22fc5fecb4989924a75cc73b7d, type: 3}
+  - {fileID: 6744352653623546819, guid: 7d36873ea752d69469e9fba4a3224536, type: 3}

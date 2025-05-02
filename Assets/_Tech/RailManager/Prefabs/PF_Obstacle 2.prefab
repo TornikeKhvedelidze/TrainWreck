@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8835668629788798832}
+  - component: {fileID: 6744352653623546819}
   m_Layer: 0
   m_Name: PF_Obstacle 2
   m_TagString: Untagged
@@ -32,6 +33,20 @@ Transform:
   - {fileID: 4380088376380882925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6744352653623546819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5766207394218327716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c783c9cebad194f9e2ac9d03e130f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: Basic2
+  DoRemoveRail: 0
 --- !u!1 &5953724243259137102
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +112,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e976ab08a2c741f4abf999f681af8aab, type: 2}
+  - {fileID: 2100000, guid: 5fd6b56a6af210e4dab6cbdc4a56f38e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

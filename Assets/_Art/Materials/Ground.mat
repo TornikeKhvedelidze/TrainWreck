@@ -103,7 +103,8 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _BendingStrenght: 1.65
+    - _Backwards: 8.9
+    - _BendingStrenght: 1.35
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -126,12 +127,16 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Sideways: -14.06
+    - _RotationSpeed: 0
+    - _Sideways: 74.86
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpiralRadius: 0.13
+    - _SpiralSpeed: 0
     - _SpiralStrenght: 3.72
+    - _SprialFrequency: 0
+    - _SprialStrenght: 0
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0

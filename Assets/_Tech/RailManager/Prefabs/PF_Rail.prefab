@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1819a963c1c37a140b1455ed770139d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _railVisual: {fileID: 2783082325636225779}
+  _obstaclePointStart: {fileID: 1119870700007014760}
+  _obstaclePointEnd: {fileID: 1275054729937125247}
 --- !u!1 &5625883617583917465
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +169,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 760a6056d18243c4c8b2d79cac1f2dd4, type: 3}
+--- !u!1 &2783082325636225779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5486950826901512094, guid: 760a6056d18243c4c8b2d79cac1f2dd4, type: 3}
+  m_PrefabInstance: {fileID: 7690721089826522477}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8274481744116875161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1760400974095940340, guid: 760a6056d18243c4c8b2d79cac1f2dd4, type: 3}
