@@ -3538,6 +3538,7 @@ GameObject:
   - component: {fileID: 1536057953}
   - component: {fileID: 1536057952}
   - component: {fileID: 1536057951}
+  - component: {fileID: 1536057954}
   m_Layer: 5
   m_Name: Achievement Panel
   m_TagString: Untagged
@@ -3626,6 +3627,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536057949}
   m_CullTransparentMesh: 1
+--- !u!114 &1536057954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536057949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba482b8bf83a0740809a21d9e60a75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _card: {fileID: 2161510748576275395, guid: 926ac2e39c74f85419d1347f4bad7612, type: 3}
+  _cardParent: {fileID: 1536057950}
 --- !u!1 &1558454625
 GameObject:
   m_ObjectHideFlags: 0
@@ -4443,6 +4458,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1971065197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971065199}
+  - component: {fileID: 1971065198}
+  m_Layer: 0
+  m_Name: PF_AchievementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1971065198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971065197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af89c35e7b152174eae7310773ccaf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dontDestroy: 1
+  _data: {fileID: 11400000, guid: a4d9024dab94d50429f090785f4c6021, type: 2}
+--- !u!4 &1971065199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971065197}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994559474
 GameObject:
   m_ObjectHideFlags: 0
@@ -4887,6 +4948,7 @@ SceneRoots:
   - {fileID: 1327849867}
   - {fileID: 4651519406592277304}
   - {fileID: 887480842}
+  - {fileID: 1971065199}
   - {fileID: 1458530153}
   - {fileID: 961739753}
   - {fileID: 203844589}
