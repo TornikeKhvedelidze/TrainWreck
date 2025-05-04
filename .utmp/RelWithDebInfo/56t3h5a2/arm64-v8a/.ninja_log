@@ -1,0 +1,12 @@
+# ninja log v5
+56	5970	7680676342362641	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	137cde0e68f6f3be
+5971	8018	7680676363315910	D:/UnityProjects/TrainWreckReboot/TrainWreck/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/56t3h5a2/obj/arm64-v8a/libswappywrapper.so	1f2911881d37d26f
+46	14240	7680676425457096	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	e461cb0010c652e8
+42	14256	7680676425634450	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	c2f03bffc817fce8
+5	14299	7680676426044294	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	14e647ebc5f690a2
+49	14302	7680676426044294	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	d634c5a6d57d88aa
+8	14426	7680676427314208	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	d16003e4a8d7b07b
+39	14655	7680676429214131	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	ec51d056dab2d1b4
+1	14744	7680676430509010	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	72ae1e0fcd6d6167
+52	15014	7680676433234547	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	886784d362a2a31c
+15014	15660	7680676439694606	D:/UnityProjects/TrainWreckReboot/TrainWreck/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/56t3h5a2/obj/arm64-v8a/libgame.so	221c7a527f18c580

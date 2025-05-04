@@ -26,8 +26,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - ENABLE_BENDING
-  m_InvalidKeywords:
-  - _ENABLEBENDING
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -40,7 +39,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: b3ca39bc899ab8d469767aab1a765527, type: 3}
+        m_Texture: {fileID: 2800000, guid: e844e9219881ff84b830f364800ba426, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -58,27 +57,27 @@ Material:
     m_Ints: []
     m_Floats:
     - ENABLE_BENDING: 1
-    - _Backwards: -0.13
-    - _BendingStrenght: 2.69
+    - _Backwards: -1.02
+    - _BendingStrenght: 1.84
     - _Color: 0
     - _ENABLEBENDING: 1
     - _Float: 1
-    - _Lerp: 0
+    - _Lerp: 1
     - _Power: 1.32
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RotationSpeed: 0.1
-    - _Sideways: -0.21
-    - _SpiralRadius: 2.57
-    - _SpiralSpeed: 1
-    - _SpiralStrenght: 0.11
-    - _SprialFrequency: 0.51
-    - _SprialStrenght: 1.25
-    - _SprialTwist: 0.88
+    - _RotationSpeed: 0
+    - _Sideways: -1.05
+    - _SpiralRadius: 0.13
+    - _SpiralSpeed: 0
+    - _SpiralStrenght: 3.72
+    - _SprialFrequency: 0
+    - _SprialStrenght: 0
+    - _SprialTwist: 0
     - _Threshold: -656.56
-    - _backwards: -1.82
+    - _backwards: -0.62
     m_Colors:
-    - _Color: {r: 0.6452829, g: 0.6452829, b: 0.6452829, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Curve: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

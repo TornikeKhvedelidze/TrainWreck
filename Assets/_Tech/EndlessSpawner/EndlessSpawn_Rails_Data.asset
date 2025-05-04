@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b4ecdbcc4b829947b80e6d4cfb12e7c, type: 3}
-  m_Name: EndlessSpawnObjects_Data
+  m_Name: EndlessSpawn_Rails_Data
   m_EditorClassIdentifier: 
-  _datal:
+  _spawnObject:
     elements:
-    - Element: {fileID: 0}
-      Weight: 0
+    - Element: {fileID: 7680570550678189526, guid: a97750af8ed1fd64896f3d349910689e, type: 3}
+      Weight: 100

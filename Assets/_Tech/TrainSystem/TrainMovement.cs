@@ -40,7 +40,7 @@ public class TrainMovement : MonoBehaviour
         MoveToCurrentLine();
     }
 
-    private void Move(int value)
+    public void Move(int value)
     {
         if (Mathf.Abs(_currentLineIndex + value) > 1) return;
 
