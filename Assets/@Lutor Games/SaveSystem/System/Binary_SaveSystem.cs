@@ -37,7 +37,7 @@ namespace PrivateLT.NOACCESS
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<Binary_SaveSystem>();
+                    _instance = FindAnyObjectByType<Binary_SaveSystem>();
                     if (_instance == null)
                     {
                         GameObject singletonObject = new GameObject(typeof(Binary_SaveSystem).Name);

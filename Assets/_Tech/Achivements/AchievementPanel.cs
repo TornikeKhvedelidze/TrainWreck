@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class AchievementPanel : MonoBehaviour
 {
-    [SerializeField] private AchievementCard _card;
-    [SerializeField] private Transform _cardParent;
+    [SerializeField] private AchievementCard _achievementCard;
+    [SerializeField] private Transform _cardsParent;
+
     public void Start()
     {
         Initialization();
@@ -11,11 +12,12 @@ public class AchievementPanel : MonoBehaviour
 
     public void Initialization()
     {
-        var Achievements = AchievementManager.GetAllAchievements();
+        var achievements = AchievementManager.GetAllAchievements();
 
-        foreach (var achievement in Achievements)
+        foreach (var achievement in achievements)
         {
-            var card = Instantiate(_card, _cardParent);
+            var card = Instantiate(_achievementCard, _cardsParent);
+
             card.Initialization(achievement);
         }
     }

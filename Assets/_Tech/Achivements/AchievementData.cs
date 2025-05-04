@@ -1,26 +1,28 @@
 using LutorGames.SaveSystem;
-using LutorGames.Serializables;
-using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 [Serializable]
-public class AchievementStatus : Base_Saveable<AchievementStatus>
+public class AchievementStatus_Saveable : Base_Saveable<AchievementStatus_Saveable>
 {
-    public bool isComplete;
-    public bool isClamed;
+    public bool IsComplete;
+    public bool IsClamed;
 }
+
 [Serializable]
 public class AchievementInfo
 {
     public string description;
-    public string name => status.Id;
-    public bool isCompleted => status.isComplete;
-    public bool isClaimed => status.isClamed;
-    public AchievementStatus status;
+    public string Name => Status.Id;
+    public bool IsCompleted => Status.IsComplete;
+    public bool IsClaimed => Status.IsClamed;
+
+    public AchievementStatus_Saveable Status;
 }
+
+
 [CreateAssetMenu(fileName = "AchievementData", menuName = "Scriptable Objects/AchievementData")]
 public class AchievementData : ScriptableObject
 {
@@ -28,7 +30,8 @@ public class AchievementData : ScriptableObject
 
     public bool TryGetCurrentAchievement(out AchievementInfo info)
     {
-        info = Achievements.FirstOrDefault(x => !x.isClaimed);
+        info = Achievements.FirstOrDefault(x => !x.IsClaimed);
+
         return info != null;
     }
 }
