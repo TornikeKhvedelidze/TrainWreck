@@ -14,32 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Achievements:
   - description: first achivement
-    status:
-      Id: First
-      isComplete: 1
-      isClamed: 1
+    Status:
+      Id: 
+      IsComplete: 0
+      IsClamed: 0
   - description: Second achivement
-    status:
-      Id: Second
-      isComplete: 1
-      isClamed: 0
+    Status:
+      Id: 
+      IsComplete: 0
+      IsClamed: 0
   - description: third achivement
-    status:
-      Id: Third
-      isComplete: 0
-      isClamed: 0
+    Status:
+      Id: 
+      IsComplete: 0
+      IsClamed: 0
   - description: 4 achivement
-    status:
-      Id: 4
-      isComplete: 0
-      isClamed: 0
+    Status:
+      Id: 
+      IsComplete: 0
+      IsClamed: 0
   - description: 5 achivement
-    status:
-      Id: 5
-      isComplete: 0
-      isClamed: 0
+    Status:
+      Id: 
+      IsComplete: 0
+      IsClamed: 0
   - description: 6 achivement
-    status:
-      Id: 6
-      isComplete: 0
-      isClamed: 0
+    Status:
+      Id: 
+      IsComplete: 0
+      IsClamed: 0
