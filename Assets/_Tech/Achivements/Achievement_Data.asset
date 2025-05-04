@@ -13,32 +13,44 @@ MonoBehaviour:
   m_Name: Achievement_Data
   m_EditorClassIdentifier: 
   Achievements:
-  - description: first achivement
+  - Description: 
+    Icon: {fileID: 0}
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Status:
+      Id: First
+      IsComplete: 0
+      IsClamed: 0
+  - Description: 
+    Icon: {fileID: 0}
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Status:
+      Id: Second
+      IsComplete: 0
+      IsClamed: 0
+  - Description: 
+    Icon: {fileID: 0}
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    Status:
+      Id: 3
+      IsComplete: 0
+      IsClamed: 0
+  - Description: 
+    Icon: {fileID: 0}
+    Color: {r: 0, g: 0, b: 0, a: 0}
     Status:
       Id: 
       IsComplete: 0
       IsClamed: 0
-  - description: Second achivement
+  - Description: 
+    Icon: {fileID: 0}
+    Color: {r: 0, g: 0, b: 0, a: 0}
     Status:
       Id: 
       IsComplete: 0
       IsClamed: 0
-  - description: third achivement
-    Status:
-      Id: 
-      IsComplete: 0
-      IsClamed: 0
-  - description: 4 achivement
-    Status:
-      Id: 
-      IsComplete: 0
-      IsClamed: 0
-  - description: 5 achivement
-    Status:
-      Id: 
-      IsComplete: 0
-      IsClamed: 0
-  - description: 6 achivement
+  - Description: 
+    Icon: {fileID: 0}
+    Color: {r: 0, g: 0, b: 0, a: 0}
     Status:
       Id: 
       IsComplete: 0

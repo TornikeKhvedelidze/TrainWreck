@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class AchievementStatus_Saveable : Base_Saveable<AchievementStatus_Saveable>
@@ -14,7 +15,9 @@ public class AchievementStatus_Saveable : Base_Saveable<AchievementStatus_Saveab
 [Serializable]
 public class AchievementInfo
 {
-    public string description;
+    public string Description;
+    public Sprite Icon;
+    public Color Color;
     public string Name => Status.Id;
     public bool IsCompleted => Status.IsComplete;
     public bool IsClaimed => Status.IsClamed;
