@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed0ca941e9216d45ac0f11518db9d27, type: 3}
-  m_Name: RareChest
+  m_Script: {fileID: 11500000, guid: fe94faa9ca73401dbd10931c4c945acb, type: 3}
+  m_Name: Chest_Data
   m_EditorClassIdentifier: 
-  rarity: 4
-  chestRewardInfo:
-    elements:
-    - Element: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
-      Weight: 0
+  chests:
+  - {fileID: 11400000, guid: 90a7e41fde2df1142a3a4a7b0507a2f8, type: 2}
+  - {fileID: 11400000, guid: 2eda893a590d9e9478ac330ed8e38fd1, type: 2}
