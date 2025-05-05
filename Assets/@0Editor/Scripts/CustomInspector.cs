@@ -1,112 +1,50 @@
-using System;
-using System.Reflection;
+#if UNITY_EDITOR
+
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace CustomInspector
+[InitializeOnLoad]
+public class HierarchyCustomEditor : MonoBehaviour
 {
-    [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-    public class ValueDropdownAttribute : PropertyAttribute
+    static HierarchyCustomEditor()
     {
-        public string MethodPath { get; }
-
-        public ValueDropdownAttribute(string methodName)
-        {
-            MethodPath = methodName;
-        }
+        EditorApplication.hierarchyWindowItemOnGUI += HandleHierarchyWindowItemOnGUI;
     }
 
-    [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-    public class HideIfAttribute : PropertyAttribute
+    private static void HandleHierarchyWindowItemOnGUI(int instanceID, Rect selectionRect)
     {
-        public string ConditionalFieldName { get; }
-        public bool Condition { get; }
+        GameObject go = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
 
-        public HideIfAttribute(string fieldName, bool condition = true)
+        if (go == null) return;
+
+        // Middle click toggle
+        Event e = Event.current;
+        if (e != null && selectionRect.Contains(e.mousePosition) && e.type == EventType.MouseDown && e.button == 2)
         {
-            ConditionalFieldName = fieldName;
-            Condition = condition;
+            Undo.RecordObject(go, "Toggle Active State");
+            go.SetActive(!go.activeSelf);
+            EditorUtility.SetDirty(go);
+            EditorSceneManager.MarkSceneDirty(go.scene);
+            e.Use();
+        }
+
+        // Custom styling for @-prefixed GameObjects
+        if (go.name.StartsWith("@"))
+        {
+            EditorGUI.DrawRect(selectionRect, Color.white);
+
+            string text = go.name.Substring(1);
+            GUIStyle style = new GUIStyle(GUI.skin.label)
+            {
+                normal = { textColor = Color.black },
+                alignment = TextAnchor.MiddleCenter,
+                fontStyle = FontStyle.Bold
+            };
+
+            EditorGUI.LabelField(selectionRect, text, style);
         }
     }
-
-#if UNITY_EDITOR
-    [CustomPropertyDrawer(typeof(ValueDropdownAttribute))]
-    [CustomPropertyDrawer(typeof(HideIfAttribute))]
-    public class ValueDropdownDrawer : PropertyDrawer
-    {
-        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-        {
-            return IsHidden(property) ? 0f : EditorGUI.GetPropertyHeight(property, label);
-        }
-
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-        {
-            if (IsHidden(property))
-            {
-                return;
-            }
-
-            if (property.propertyType == SerializedPropertyType.String)
-            {
-                ValueDropdownAttribute valueDropdownAttribute = attribute as ValueDropdownAttribute;
-
-                string[] parts = valueDropdownAttribute.MethodPath.Split('.');
-
-                if (parts.Length != 2)
-                {
-                    Debug.LogError("Invalid method name format");
-                    return;
-                }
-
-                string className = parts[0];
-                string methodName = parts[1];
-
-                Type classType = Type.GetType(className);
-
-                if (classType == null)
-                {
-                    Debug.LogError("Class not found: " + className);
-                    return;
-                }
-
-                MethodInfo methodInfo = classType.GetMethod(methodName, BindingFlags.Public | BindingFlags.Static);
-
-                if (methodInfo == null)
-                {
-                    Debug.LogError("Method not found: " + methodName);
-                    return;
-                }
-
-                string[] options = (string[])methodInfo.Invoke(property.serializedObject.targetObject, null);
-
-                if (options == null) return;
-
-                int selectedIndex = Mathf.Max(0, Array.IndexOf(options, property.stringValue));
-                selectedIndex = EditorGUI.Popup(position, label.text, selectedIndex, options);
-                property.stringValue = options[selectedIndex];
-            }
-            else
-            {
-                EditorGUI.PropertyField(position, property, label);
-            }
-        }
-
-        private bool IsHidden(SerializedProperty property)
-        {
-            HideIfAttribute hideIfAttribute = attribute as HideIfAttribute;
-
-            if (hideIfAttribute != null)
-            {
-                SerializedProperty conditionProperty = property.serializedObject.FindProperty(hideIfAttribute.ConditionalFieldName);
-
-                if (conditionProperty != null && conditionProperty.propertyType == SerializedPropertyType.Boolean)
-                {
-                    return conditionProperty.boolValue == hideIfAttribute.Condition;
-                }
-            }
-
-            return false;
-        }
-    }
-#endif
 }
+
+#endif
