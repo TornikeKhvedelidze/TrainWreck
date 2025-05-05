@@ -484,6 +484,7 @@ namespace LutorGames.SaveSystem
         public T DefaultValue;
 
         public Action<T> OnValueChanged;
+        public Action OnValueChangedNoArgs;
 
         private bool _initialised;
         private bool _isValidInitialization => _initialisedTime > Binary_SaveSystem.AwakeTime;
@@ -496,6 +497,7 @@ namespace LutorGames.SaveSystem
             {
                 SaveableValue.Value = value;
                 OnValueChanged?.Invoke(value);
+                OnValueChangedNoArgs?.Invoke();
                 if (!_initialised) return;
                 Save();
             }
@@ -539,12 +541,14 @@ namespace LutorGames.SaveSystem
             SaveableValue.SaveId = Id;
 
             if (onValueChanged != null) onValueChanged += OnValueChanged;
+            if (onValueChanged != null) onValueChanged += (x) => OnValueChangedNoArgs();
 
             Value = DefaultValue;
             SaveableValue.Load(out var data);
             Value = data.Value;
 
             OnValueChanged?.Invoke(data.Value);
+            OnValueChangedNoArgs?.Invoke();
 
             _initialised = true;
 

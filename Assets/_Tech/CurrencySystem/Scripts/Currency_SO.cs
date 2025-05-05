@@ -16,6 +16,12 @@ public class Currency_SO : RewardSO
         set => ValueSaveable.OnValueChanged = value;
     }
 
+    public Action OnValueChangedNoArgs
+    {
+        get => ValueSaveable.OnValueChangedNoArgs;
+        set => ValueSaveable.OnValueChangedNoArgs = value;
+    }
+
     public virtual bool AbleToPay(float amount)
     {
         if (Value < amount) return false;
