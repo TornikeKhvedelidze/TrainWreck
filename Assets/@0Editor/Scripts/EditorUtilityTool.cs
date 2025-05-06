@@ -10,7 +10,7 @@ public class EditorUtilityTool : MonoBehaviour
     static EditorUtilityTool()
     {
         EditorApplication.hierarchyWindowItemOnGUI += HandleHierarchyWindowItemOnGUI;
-        SceneView.duringSceneGui += OnSceneGUI;
+        EditorApplication.hierarchyWindowItemOnGUI += OnHierarchyGUI;
     }
 
     private static void HandleHierarchyWindowItemOnGUI(int instanceID, Rect selectionRect)
@@ -34,22 +34,20 @@ public class EditorUtilityTool : MonoBehaviour
         }
     }
 
-    private static void OnSceneGUI(SceneView sceneView)
+    private static void OnHierarchyGUI(int instanceID, Rect selectionRect)
     {
         Event e = Event.current;
 
-        if (e != null && e.type == EventType.MouseDown && e.button == 2)
+        if (e != null && e.type == EventType.MouseDown && e.button == 2 && selectionRect.Contains(e.mousePosition))
         {
-            Debug.Log("Middle mouse click detected in Scene view");
+            GameObject clickedObject = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
 
-            GameObject selected = Selection.activeGameObject;
-
-            if (selected != null)
+            if (clickedObject != null)
             {
-                Undo.RecordObject(selected, "Toggle Active State");
-                selected.SetActive(!selected.activeSelf);
-                EditorUtility.SetDirty(selected);
-                EditorSceneManager.MarkSceneDirty(selected.scene); // Optional: ensures scene shows as dirty
+                Undo.RecordObject(clickedObject, "Toggle Active State");
+                clickedObject.SetActive(!clickedObject.activeSelf);
+                EditorUtility.SetDirty(clickedObject);
+                EditorSceneManager.MarkSceneDirty(clickedObject.scene);
                 e.Use();
             }
         }
