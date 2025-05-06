@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a598f189d51b84f9c177ba93f185c6, type: 3}
+  m_Name: Achievement_Data
+  m_EditorClassIdentifier: 
+  Achievements:
+  - Description: dad
+    Icon: {fileID: 1978951515, guid: d2fb8685b9dc6ab4fb4c7f1becf39483, type: 3}
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    goal: 6
+    Status:
+      Id: First
+      IsClamed: 1
+      Progress: 7
+  - Description: dada
+    Icon: {fileID: -739058197, guid: 05524cc79c11232459f2a00c52a30328, type: 3}
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    goal: 12
+    Status:
+      Id: Second
+      IsClamed: 0
+      Progress: 0

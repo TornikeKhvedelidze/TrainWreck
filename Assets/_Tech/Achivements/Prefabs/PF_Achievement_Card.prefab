@@ -1868,9 +1868,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nameText: {fileID: 4997393548867257013}
   _descriptionText: {fileID: 5771842258366666476}
-  _achievementIcon: {fileID: 0}
-  _achievementBackground: {fileID: 0}
-  _rewardIcon: {fileID: 0}
-  _rewardText: {fileID: 0}
-  _achievementProgress: {fileID: 0}
+  _achievementProgress: {fileID: 2750253807132648963}
   _progressionText: {fileID: 3629343641214865505}
+  _claimButton: {fileID: 4529791300552374301}
