@@ -267,7 +267,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5763013222865963786}
   - component: {fileID: 697111023633766386}
-  - component: {fileID: 5220975632080734748}
   m_Layer: 5
   m_Name: AchievementsParent
   m_TagString: Untagged
@@ -318,20 +317,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 67.15}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &5220975632080734748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7043357736745119337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ba482b8bf83a0740809a21d9e60a75b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _achievementCard: {fileID: 2161510748576275395, guid: 926ac2e39c74f85419d1347f4bad7612, type: 3}
-  _cardsParent: {fileID: 1177172455934655173}
 --- !u!1 &8346206142185224639
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +464,7 @@ GameObject:
   - component: {fileID: 1177172455934655173}
   - component: {fileID: 4440648829763178320}
   - component: {fileID: 7457425852074511029}
+  - component: {fileID: 2443723116093819737}
   m_Layer: 5
   m_Name: PF_Achievements_Panel
   m_TagString: Untagged
@@ -546,3 +532,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2443723116093819737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965337368010786929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba482b8bf83a0740809a21d9e60a75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _achievementCard: {fileID: 2161510748576275395, guid: 926ac2e39c74f85419d1347f4bad7612, type: 3}
+  _cardsParent: {fileID: 5763013222865963786}

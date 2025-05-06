@@ -7,30 +7,21 @@ public class AchievementCard : MonoBehaviour
 {
     [SerializeField] private TMP_Text _nameText;
     [SerializeField] private TMP_Text _descriptionText;
-    [SerializeField] private Image _achievementIcon;
-    [SerializeField] private Image _achievementBackground;
-    [SerializeField] private Image _rewardIcon;
-    [SerializeField] private Text _rewardText;
     [SerializeField] private Slider _achievementProgress;
     [SerializeField] private TMP_Text _progressionText;
+    [SerializeField] private Button _claimButton;
     private AchievementInfo _achievementInfo;
     public void Initialization(AchievementInfo info)
     {
         _achievementInfo = info;
         UpdateCard();
         AchievementManager.OnSomethingChanged += UpdateCard;
+        _claimButton.onClick.AddListener(Claim);
     }
 
     public void Claim()
     {
-        if (!_achievementInfo.IsCompleted || _achievementInfo.IsClaimed)
-        {
-            return;
-        }
-
-        AchievementManager.OnSomethingChanged?.Invoke();
-        Debug.Log("Get Reward!!!!!");
-        _achievementInfo.Status.IsClamed = true;
+        _achievementInfo.Claim();
     }
 
     public void UpdateCard()
@@ -40,12 +31,7 @@ public class AchievementCard : MonoBehaviour
         //_achievementIcon.sprite = _achievementInfo.Icon;
         //_achievementBackground.color = _achievementInfo.Color;
         _progressionText.text = _achievementInfo.IsClaimed ? "Claimed" : _achievementInfo.IsCompleted ? "is Completed" : "In Progress";
-    }
-
-
-    public void TestComplete()
-    {
-        _achievementInfo.Status.IsComplete = true;
-        AchievementManager.OnSomethingChanged?.Invoke();
+        _achievementProgress.value = _achievementInfo.progressRatio;
+        _progressionText.text = $"{_achievementInfo.progress} / {_achievementInfo.goal}";
     }
 }

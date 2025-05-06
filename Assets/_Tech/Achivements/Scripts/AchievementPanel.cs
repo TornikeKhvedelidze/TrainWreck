@@ -14,6 +14,7 @@ public class AchievementPanel : MonoBehaviour
     {
         var achievements = AchievementManager.GetAllAchievements();
 
+        Debug.Log(achievements.Count);
         foreach (var achievement in achievements)
         {
             var card = Instantiate(_achievementCard, _cardsParent);
