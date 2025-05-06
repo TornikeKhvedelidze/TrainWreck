@@ -14,7 +14,7 @@ public class ChestManager : Singleton<ChestManager>
     public void addChest(ChestSO chest)
     {
         Debug.Log("test");
-        AddChest(chest,1);
+        AddChest(chest, 1);
     }
 
     public void RemoveCHest(ChestSO chest)

@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ChestPanel : MonoBehaviour
 {
@@ -10,7 +8,7 @@ public class ChestPanel : MonoBehaviour
     [SerializeField] private Transform _cardsParent;
     private List<ChestCard> _chestCards = new List<ChestCard>();
 
-    public void OnEnable()
+    public void Start()
     {
         Initialization();
     }
@@ -23,6 +21,7 @@ public class ChestPanel : MonoBehaviour
     public void Initialization()
     {
         var chests = ChestManager.GetAllAvailableChests();
+
         foreach (var chestSO in chests)
         {
             var chestCard = GetChestCard();
@@ -35,8 +34,8 @@ public class ChestPanel : MonoBehaviour
         ChestCard chestCard = _chestCards.FirstOrDefault(x => !x.IsActive);
         if (chestCard == null)
         {
-             chestCard = Instantiate(_chestCard, _cardsParent);
-             _chestCards.Add(chestCard);
+            chestCard = Instantiate(_chestCard, _cardsParent);
+            _chestCards.Add(chestCard);
         }
         chestCard.SetActive(true);
 

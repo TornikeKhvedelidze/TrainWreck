@@ -12,7 +12,7 @@ public class ChestCard : MonoBehaviour
     [HideInInspector] public bool IsActive { get; set; }
 
     private ChestSO _chestSO;
-    
+
     public void Initialization(ChestSO info)
     {
         _chestSO = info;
