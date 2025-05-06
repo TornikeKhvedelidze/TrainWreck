@@ -9,19 +9,14 @@ public class ChestCard : MonoBehaviour
     [SerializeField] private TMP_Text _chestAmountText;
     [SerializeField] private Image _background; //will be colored based on chest rarity
     [SerializeField] private Image _icon;
+    [HideInInspector] public bool IsActive { get; set; }
 
     private ChestSO _chestSO;
-    private int _amount;
-
-    private void Start()
-    {
-
-    }
-
-    public void Initialization(ChestSO info, int amount)
+    
+    public void Initialization(ChestSO info)
     {
         _chestSO = info;
-        _amount = amount;
+        info.Amount.OnValueChangedNoArgs += UpdateCard;
 
         UpdateCard();
     }
@@ -30,9 +25,15 @@ public class ChestCard : MonoBehaviour
     {
         _chestRarityText.text = _chestSO.Name;
         _descriptionText.text = _chestSO.Description;
-        _chestAmountText.text = _amount + "X";
+        _chestAmountText.text = _chestSO.Amount.Value + "X";
 
         if (_icon == null) return;
         _icon.sprite = _chestSO.Icon;
+    }
+
+    public void SetActive(bool active)
+    {
+        gameObject.SetActive(active);
+        IsActive = active;
     }
 }

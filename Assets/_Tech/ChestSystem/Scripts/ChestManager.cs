@@ -11,7 +11,18 @@ public class ChestManager : Singleton<ChestManager>
         return Instance._chestData.chests.Where(x => x.Amount.Value > 0).ToList();
     }
 
-    public static void AddChest(ChestSO chest, int addAmount)
+    public void addChest(ChestSO chest)
+    {
+        Debug.Log("test");
+        AddChest(chest,1);
+    }
+
+    public void RemoveCHest(ChestSO chest)
+    {
+        RemoveChest(chest);
+    }
+
+    public static void AddChest(ChestSO chest, int addAmount = 1)
     {
         chest.Amount.Value += addAmount;
     }
