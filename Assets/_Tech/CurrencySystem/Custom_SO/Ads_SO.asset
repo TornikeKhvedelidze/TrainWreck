@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d036863ab96ecb94aada01f6d34840a2, type: 3}
   m_Name: Ads_SO
   m_EditorClassIdentifier: 
+  rewardName: AD reward :d
+  RewardPrefab: {fileID: 0}
   ValueSaveable:
     Id: Ads
     DefaultValue: 0
+  valuetest: 0
   Icon: {fileID: 363627941, guid: 1a8fa20390efbcd41b31c18ec1134da7, type: 3}

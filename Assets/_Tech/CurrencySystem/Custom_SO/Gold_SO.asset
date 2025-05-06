@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad791b87ca36b54baca436b149e9778, type: 3}
   m_Name: Gold_SO
   m_EditorClassIdentifier: 
+  rewardName: Gold Reward
+  RewardPrefab: {fileID: 0}
   ValueSaveable:
     Id: Gold
     DefaultValue: 99
+  valuetest: 0
   Icon: {fileID: -739058197, guid: 05524cc79c11232459f2a00c52a30328, type: 3}
