@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e82a4e920bf0940aee57ce23ff9450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dontDestroy: 1
+  _dontDestroy: 0
   bendingMaterials:
   - {fileID: 2100000, guid: 74a2f4ccaa5b67149af99e10f9b2ec0a, type: 2}
   - {fileID: 2100000, guid: 387c4d39f97f3aa4e8f23f8717b343cf, type: 2}
@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 77144562426be524f8905813b3041775, type: 2}
   - {fileID: 2100000, guid: 70ce3d880d45f9d428d5b47294fc4162, type: 2}
   - {fileID: 2100000, guid: 3e00f2e8b90058849bd9287ebe552afb, type: 2}
-  sidewaysRange: {x: -2, y: 2}
-  backwardRange: {x: -2, y: 2}
-  bendSpeed: 5
+  sidewaysRange: {x: -1, y: 1}
+  backwardRange: {x: -1, y: 1}
+  bendSpeed: 10
+  IsPlaying_SO: {fileID: 11400000, guid: af2eda0e2017b41429c045ee4cb5e572, type: 2}

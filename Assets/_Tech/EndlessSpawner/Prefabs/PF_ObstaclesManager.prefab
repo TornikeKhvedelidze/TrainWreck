@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dontDestroy: 0
   _obstaclesData: {fileID: 11400000, guid: cc0365ade7114c64890588c833378fb0, type: 2}
+  _isPlaying_SO: {fileID: 11400000, guid: af2eda0e2017b41429c045ee4cb5e572, type: 2}

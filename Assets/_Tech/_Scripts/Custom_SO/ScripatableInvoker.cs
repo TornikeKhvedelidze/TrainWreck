@@ -15,7 +15,6 @@ public class ScripatableInvoker : MonoBehaviour
     [SerializeField, HideIf("_bool", false)] private bool _defaultBoolValue;
     [SerializeField, HideIf("_bool", false)] private Bool_SO _boolButtonScriptable;
 
-
     public void Press()
     {
         if (_Empty) _ButtonScriptable.Invoke();

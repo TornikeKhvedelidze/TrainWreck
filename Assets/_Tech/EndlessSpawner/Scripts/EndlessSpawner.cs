@@ -1,17 +1,24 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public class EndlessSpawner : MonoBehaviour
 {
-    [SerializeField] private float _speed = 60f;
+    [SerializeField] private float _stoppedSpeed = 60f;
+    [SerializeField] private float _movingSpeed = 60f;
+    [SerializeField] private float _speedChangeDuration = 1f;
     [SerializeField] private float _duplicantDistance = 80f;
+    [SerializeField] private float _restartDitance = 80f;
     [SerializeField] private int _duplicantAmount = 3;
     [SerializeField] private Transform _objectsparent;
     [SerializeField] private EndlessSpawnObjects_Data _endlessSpawnObjects_Data;
+    [SerializeField] private Bool_SO _isPlaying_SO;
 
     //private Dictionary<GameObject, List<EndlessSpawnObject>> _endlessSpawnObjectsPool;
     private List<EndlessSpawnObject> _endlessSpawnObjects = new();
+
+    private float _speed;
 
     private void Start()
     {
@@ -28,7 +35,7 @@ public class EndlessSpawner : MonoBehaviour
 
             endlessObjectPosition.z -= _speed * Time.deltaTime;
 
-            if (endlessObjectPosition.z <= -_duplicantDistance)
+            if (endlessObjectPosition.z <= -_restartDitance)
             {
                 endlessObjectPosition.z += _duplicantDistance * _duplicantAmount;
 
@@ -55,6 +62,18 @@ public class EndlessSpawner : MonoBehaviour
 
             _endlessSpawnObjects.Add(endlessObject);
         }
+
+        UpdateSpeed(_isPlaying_SO.Value);
+
+        _isPlaying_SO.OnChanged += UpdateSpeed;
+    }
+
+    private void UpdateSpeed(bool value)
+    {
+        float targetSpeed = value ? _movingSpeed : _stoppedSpeed;
+
+        DOTween.To(() => _speed, x => _speed = x, targetSpeed, _speedChangeDuration)
+               .SetEase(Ease.InOutSine);
     }
 
 

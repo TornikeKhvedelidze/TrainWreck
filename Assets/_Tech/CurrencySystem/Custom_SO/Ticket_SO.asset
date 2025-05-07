@@ -15,7 +15,7 @@ MonoBehaviour:
   rewardName: Ticket Reward
   RewardPrefab: {fileID: 0}
   ValueSaveable:
-    Id: TicketTest
+    Id: Ticket
     DefaultValue: 1200
   valuetest: 0
-  Icon: {fileID: -739058197, guid: 05524cc79c11232459f2a00c52a30328, type: 3}
+  Icon: {fileID: -487123708, guid: 6a8c81686fe79a447acfa8409f19b3cb, type: 3}

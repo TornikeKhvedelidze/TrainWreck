@@ -19,6 +19,8 @@ public class Rail : MonoBehaviour
 
     public void InitialiseObstacle(Obstacle obstacle)
     {
+        if (obstacle == null) return;
+
         _obstacle = obstacle;
 
         if (obstacle.DoRemoveRail)

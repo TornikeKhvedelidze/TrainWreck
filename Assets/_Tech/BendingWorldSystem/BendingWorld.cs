@@ -13,15 +13,23 @@ public class BendingController : Singleton<BendingController>
     [Header("Bend Speed")]
     [SerializeField] private float bendSpeed = 1f;
 
+    [SerializeField] private Bool_SO IsPlaying_SO;
+
     private float sidewaysBend = 0f;
     private float backwardBend = 0f;
 
     private Tween sidewaysTween;
     private Tween backwardTween;
 
-    void Start()
+    private bool _isBending = true;
+
+    protected override void Awake()
     {
-        SetNewTargets();
+        base.Awake();
+
+        if (IsPlaying_SO.Value) SetNewTargets();
+
+        IsPlaying_SO.OnChanged += SetObstaclesActive;
     }
 
     void Update()
@@ -33,10 +41,15 @@ public class BendingController : Singleton<BendingController>
         }
     }
 
-    void SetNewTargets()
+    private void SetObstaclesActive(bool value)
     {
-        float newSideways = Random.Range(sidewaysRange.x, sidewaysRange.y);
-        float newBackward = Random.Range(backwardRange.x, backwardRange.y);
+        _isBending = value;
+    }
+
+    private void SetNewTargets()
+    {
+        float newSideways = _isBending ? Random.Range(sidewaysRange.x, sidewaysRange.y) : 0;
+        float newBackward = _isBending ? Random.Range(backwardRange.x, backwardRange.y) : 0;
 
         sidewaysTween?.Kill();
         backwardTween?.Kill();

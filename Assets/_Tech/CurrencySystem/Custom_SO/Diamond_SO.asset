@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad791b87ca36b54baca436b149e9778, type: 3}
+  m_Name: Diamond_SO
+  m_EditorClassIdentifier: 
+  rewardName: Diamond
+  RewardPrefab: {fileID: 0}
+  ValueSaveable:
+    Id: Diamond
+    DefaultValue: 99
+  valuetest: 0
+  Icon: {fileID: -1694195117, guid: d8d2cfebb894af448801f9e58dba86cb, type: 3}

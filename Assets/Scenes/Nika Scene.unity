@@ -1314,6 +1314,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_ChestManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6482823261534746630, guid: 75542950349a47142a4866a0c992fb38, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1541,6 +1545,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_Chests
       objectReference: {fileID: 0}
+    - target: {fileID: 4743059602191719809, guid: c784a4337be977944a404696a5eb6228, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196188739126560547, guid: c784a4337be977944a404696a5eb6228, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196188739126560547, guid: c784a4337be977944a404696a5eb6228, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196188739126560547, guid: c784a4337be977944a404696a5eb6228, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196188739126560547, guid: c784a4337be977944a404696a5eb6228, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196188739126560547, guid: c784a4337be977944a404696a5eb6228, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Press
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196188739126560547, guid: c784a4337be977944a404696a5eb6228, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ScripatableInvoker, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196188739126560547, guid: c784a4337be977944a404696a5eb6228, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5591364158083592792, guid: c784a4337be977944a404696a5eb6228, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1629,7 +1665,8 @@ PrefabInstance:
       propertyPath: m_PixelsPerUnitMultiplier
       value: 1.01
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7523982324027223177, guid: c784a4337be977944a404696a5eb6228, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1657,7 +1694,7 @@ SceneRoots:
   - {fileID: 203844589}
   - {fileID: 2143826067}
   - {fileID: 727782133}
+  - {fileID: 758312045}
   - {fileID: 1223903320}
   - {fileID: 715139286}
   - {fileID: 1448017040}
-  - {fileID: 758312045}
