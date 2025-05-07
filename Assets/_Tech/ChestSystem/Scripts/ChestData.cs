@@ -16,4 +16,9 @@ public class ChestData : ScriptableObject
     {
         return chests.FirstOrDefault(x => x.Name == name);
     }
+
+    public List<ChestSO> GetChests()
+    {
+        return chests.Where(x => x.Amount.Value > 0).ToList();
+    }
 }

@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ChestPanel : MonoBehaviour
+public class ChestListPanel : MonoBehaviour
 {
     [SerializeField] private ChestCard _chestCard;
     [SerializeField] private Transform _cardsParent;
     private List<ChestCard> _chestCards = new List<ChestCard>();
 
-    public void Start()
+    public void OnEnable()
     {
         Initialization();
     }

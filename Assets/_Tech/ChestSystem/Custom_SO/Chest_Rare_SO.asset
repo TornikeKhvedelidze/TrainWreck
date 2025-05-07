@@ -15,6 +15,7 @@ MonoBehaviour:
   Description: Very rare and respectable
   RewardAmount: 0
   Icon: {fileID: 363627941, guid: 1a8fa20390efbcd41b31c18ec1134da7, type: 3}
+  chestPrefab: {fileID: 8968750960730864325, guid: c43603587f7cb574d84fab205027be2a, type: 3}
   ChestRewardInfo:
     elements:
     - Element: {fileID: 11400000, guid: 9eeb94dad0645f847b2514bb482934cd, type: 2}

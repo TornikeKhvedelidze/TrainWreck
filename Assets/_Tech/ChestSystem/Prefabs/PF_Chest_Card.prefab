@@ -221,7 +221,8 @@ MonoBehaviour:
   _chestAmountText: {fileID: 4136678491933760387}
   _background: {fileID: 990178467835580571}
   _icon: {fileID: 69188862121062567}
-  _chestSO: {fileID: 11400000, guid: 2f267d43455523b49a2aaa1d2fb045b0, type: 2}
+  _openButton: {fileID: 5266975300414809079}
+  _chestOpenSO: {fileID: 11400000, guid: 11a2aa5143b751646842121e4f463ac3, type: 2}
 --- !u!1 &4631849461832668135
 GameObject:
   m_ObjectHideFlags: 0

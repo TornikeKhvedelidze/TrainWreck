@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1140025369959364445}
   - component: {fileID: 1711202338338835319}
   - component: {fileID: 4987126773052060676}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChestVisuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,8 +118,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9030724868509790862}
   - component: {fileID: 8968750960730864325}
-  m_Layer: 0
-  m_Name: Chest
+  m_Layer: 6
+  m_Name: ChestCommon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 3176009216089401859}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.00445, y: 5.4539437, z: 4.385682}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -153,4 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10a4350aa8b7f0409616604368e3d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestData: {fileID: 11400000, guid: 2f267d43455523b49a2aaa1d2fb045b0, type: 2}
+  _chestSO: {fileID: 11400000, guid: 90a7e41fde2df1142a3a4a7b0507a2f8, type: 2}
+  _openChestSO: {fileID: 11400000, guid: f99c8d01272a1b2428c131b25a0364bf, type: 2}

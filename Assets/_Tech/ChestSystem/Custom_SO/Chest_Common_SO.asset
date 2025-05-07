@@ -15,6 +15,7 @@ MonoBehaviour:
   Description: Very common and not respectable
   RewardAmount: 3
   Icon: {fileID: 21300000, guid: 94b07e71ea0d94547978e5a533e4f4b0, type: 3}
+  chestPrefab: {fileID: 8968750960730864325, guid: 1440c324d241ac04196c183f6d0dd53f, type: 3}
   ChestRewardInfo:
     elements:
     - Element: {fileID: 11400000, guid: 9eeb94dad0645f847b2514bb482934cd, type: 2}
@@ -22,5 +23,5 @@ MonoBehaviour:
     - Element: {fileID: 11400000, guid: 6ec857a766d5b6449bad7d8e4e8e97f3, type: 2}
       Weight: 100
   Amount:
-    Id: Common
+    Id: common
     DefaultValue: 4
