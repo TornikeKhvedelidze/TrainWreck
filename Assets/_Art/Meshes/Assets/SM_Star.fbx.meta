@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 57d068d51dd40a34388c44fb648512e2
+guid: 855b5b511b6aa364182c1f0a487a1078
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Barricades.002
+      name: Barricades
     second: {fileID: 2100000, guid: ab970cdd405e39241804e73a1f543e88, type: 2}
   materials:
     materialImportMode: 2
