@@ -1,15 +1,15 @@
+using System;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class TimeAndWeatherManager : MonoBehaviour
+public class TimeAndWeatherManager : Singleton<TimeAndWeatherManager>
 {
-    [SerializeField] TimeAndWeatherData_SO Data;
-    [SerializeField] private Vector3 particleOffset;
+    [SerializeField] TimeAndWeather_Data _timeAndWeather_Data;
+    [SerializeField] private Vector3 _particleOffset;
 
-    private ITimeProvider _timeProvider;
-    private IWeatherProvider _weatherProvider;
-    private Transform _cameraTransform; 
-    private int _currentTime;
+    private Transform _cameraTransform;
+    private int _currentHour => GetCurrentTime().Hour;
 
     #region Initialization
     private void Start()
@@ -19,46 +19,61 @@ public class TimeAndWeatherManager : MonoBehaviour
 
     private void Initialize()
     {
-        _timeProvider = new PhoneClockTimeProvider();
-        _weatherProvider = new RandomWeatherProvider();
         _cameraTransform = Camera.main.transform;
-        _currentTime = _timeProvider.GetCurrentTime().Hour;
 
         InitializeWeather();
-        UpdateTimeOfDayVisuals(DetermineTimeOfDay(_currentTime));
+
+        UpdateTimeOfDayVisuals(DetermineTimeOfDay(_currentHour));
     }
     #endregion
+
+    public static DateTime GetCurrentTime()
+    {
+        return DateTime.Now;
+    }
+
+    public static WeatherType GetCurrentWeather()
+    {
+        var watherList = Instance._timeAndWeather_Data.WeatherList;
+
+        return watherList.GetRandomElement().WeatherType;
+    }
 
     #region Weather
     private void InitializeWeather()
     {
-        SetWeather(_weatherProvider.GetCurrentWeather(Data.WeatherDataList));
+        SetWeather(GetCurrentWeather());
     }
 
     private void SetWeather(WeatherType weatherType)
     {
-        WeatherData_SO weatherData = Data.WeatherDataList.Find(x => x.WeatherType == weatherType);
+        Weather_SO weatherData = _timeAndWeather_Data.WeatherList.Elements.Find(x => x.Element.WeatherType == weatherType).Element;
+
+
         if (weatherData != null)
         {
             RenderSettings.skybox = weatherData.SkyBoxMaterial;
-            if(weatherData.WeatherParticles == null) return;
-            Instantiate(weatherData.WeatherParticles, _cameraTransform.position + particleOffset,quaternion.identity, _cameraTransform);
+
+            if (weatherData.WeatherParticles == null) return;
+
+            //TODO: Implement object pool
+            Instantiate(weatherData.WeatherParticles, _cameraTransform.position + _particleOffset, quaternion.identity, _cameraTransform);
+
+            return;
         }
+
+        Debug.LogError($"Couldn't found wather with type: {weatherType}");
     }
     #endregion
 
     #region TimeOfDay
     private TimeOfDay DetermineTimeOfDay(int currentTimeOfDay)
     {
-        foreach (TimeInterval interval in Data.TimeIntervalsArray)
-        {
-            if (currentTimeOfDay >= interval.IntervalStart && currentTimeOfDay <= interval.IntervalEnd)
-            {
-                return interval.TimeOfDay;
-            }
-        }
-        return TimeOfDay.morning;
+        var time = _timeAndWeather_Data.TimeIntervals.FirstOrDefault(x => currentTimeOfDay >= x.IntervalStart && currentTimeOfDay <= x.IntervalEnd)?.TimeOfDay;
+
+        return time ?? TimeOfDay.morning;
     }
+
     private void UpdateTimeOfDayVisuals(TimeOfDay timeOfDay)
     {
         switch (timeOfDay)

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92d743f64fbb8c64db5d1416ecce9b95, type: 3}
+  m_Script: {fileID: 11500000, guid: 38e6159fd9dba1e40849942c6bc4b911, type: 3}
   m_Name: WeatherData_Snowy
   m_EditorClassIdentifier: 
-  WeatherType: 2
+  WeatherType: 0
   SkyBoxMaterial: {fileID: 2100000, guid: e2fecb9d4b191264b874614409196e68, type: 2}
   WeatherParticles: {fileID: 4803627483740197717, guid: 9f77cea5cd1be224fae1f740c114a899, type: 3}

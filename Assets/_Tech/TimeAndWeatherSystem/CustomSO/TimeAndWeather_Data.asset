@@ -12,14 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07fdaa6c24dfe34d9dd33eb7cceecff, type: 3}
   m_Name: TimeAndWeather_Data
   m_EditorClassIdentifier: 
-  WeatherDataList:
-  - {fileID: 11400000, guid: 80dcb2527f981c94ca188a71a5158a91, type: 2}
-  - {fileID: 11400000, guid: 0470dfbf5cd31994588177e171b63f5a, type: 2}
-  - {fileID: 11400000, guid: 25935b0e5e5db9c4e8ac667a70489ec8, type: 2}
-  TimeIntervalsArray:
-  - TimeOfDay: 0
-    IntervalStart: 24
-    IntervalEnd: 18
-  - TimeOfDay: 1
-    IntervalStart: 18
-    IntervalEnd: 24
+  WeatherDataList: []
+  TimeIntervalsArray: []

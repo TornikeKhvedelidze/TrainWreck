@@ -10,7 +10,6 @@ public class ChestCard : MonoBehaviour
     [SerializeField] private Image _background; //will be colored based on chest rarity
     [SerializeField] private Image _icon;
     [SerializeField] private Button _openButton;
-    [SerializeField] ChestOpen_SO _chestOpenSO;
     [HideInInspector] public bool IsActive { get; set; }
 
     private ChestSO _chestSO;
@@ -18,12 +17,12 @@ public class ChestCard : MonoBehaviour
     public void Initialization(ChestSO info)
     {
         _chestSO = info;
-        
+
         info.Amount.OnValueChangedNoArgs -= UpdateCard;
         info.Amount.OnValueChangedNoArgs += UpdateCard;
-        
+
         _openButton.onClick.RemoveAllListeners();
-        _openButton.onClick.AddListener(() => _chestOpenSO.Value = _chestSO);
+        _openButton.onClick.AddListener(OpenChest);
 
         UpdateCard();
     }
@@ -38,10 +37,15 @@ public class ChestCard : MonoBehaviour
         _icon.sprite = _chestSO.Icon;
     }
 
+    private void OpenChest()
+    {
+        ChestManager.OpenChest(_chestSO);
+    }
+
     public void SetActive(bool active)
     {
         gameObject.SetActive(active);
         IsActive = active;
     }
-    
+
 }

@@ -1,24 +1,22 @@
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ChestOpening : MonoBehaviour
 {
-    [Header("UI Elements")] 
+    [Header("UI Elements")]
     [SerializeField] TMP_Text _chestName, _chestDescription;
 
-    [Header("Chest Intro Animation")] [SerializeField]
+    [Header("Chest Intro Animation")]
+    [SerializeField]
     private Transform spawnPosition;
 
     [SerializeField] private float riseHeight = 2f;
     [SerializeField] private float duration = 1f;
     [SerializeField] private float rotationAngle = 360f;
 
-    [SerializeField] private ChestSO TESTso;
-    [SerializeField] ChestOpen_SO _chestOpenSO;
     [SerializeField] private GameObject _elements;
-    [SerializeField] private Button_SO _openChestSO;
+    [SerializeField] ChestInvoker_ESO _chestInvoker_ESO;
+    [SerializeField] private Button_SO _openCurrentChest_ESO;
     private Chest _chestScript;
     private GameObject _spawnedChest;
 
@@ -26,13 +24,8 @@ public class ChestOpening : MonoBehaviour
     private void Awake()
     {
         SetActive(false);
-        _chestOpenSO.OnChanged += SetupChest;
-        _openChestSO.OnPressed += OpenChest;
-    }
-
-    private void Start()
-    {
-        Initialization(TESTso);
+        _chestInvoker_ESO.OnChanged += SetupChest;
+        _openCurrentChest_ESO.OnPressed += OpenChest;
     }
 
     private void OnDisable()
@@ -42,7 +35,6 @@ public class ChestOpening : MonoBehaviour
 
     public void Initialization(ChestSO chestInfo)
     {
-        
         _chestName.text = chestInfo.Name;
         _chestDescription.text = chestInfo.Description;
     }
@@ -66,7 +58,7 @@ public class ChestOpening : MonoBehaviour
     }
 
     private void OpenChest()
-   {
-      _chestScript.OpenChest();
-   }
+    {
+        _chestScript.OpenChest();
+    }
 }

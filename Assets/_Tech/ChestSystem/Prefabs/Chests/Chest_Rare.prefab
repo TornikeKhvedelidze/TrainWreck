@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 9030724868509790862}
   - component: {fileID: 8968750960730864325}
   m_Layer: 6
-  m_Name: ChestCommon
+  m_Name: Chest_Rare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,5 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10a4350aa8b7f0409616604368e3d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chestSO: {fileID: 11400000, guid: 90a7e41fde2df1142a3a4a7b0507a2f8, type: 2}
+  _chestSO: {fileID: 11400000, guid: 2eda893a590d9e9478ac330ed8e38fd1, type: 2}
   _openChestSO: {fileID: 11400000, guid: f99c8d01272a1b2428c131b25a0364bf, type: 2}

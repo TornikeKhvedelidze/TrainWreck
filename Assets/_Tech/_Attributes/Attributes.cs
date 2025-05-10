@@ -6,11 +6,11 @@ using Random = UnityEngine.Random;
 [Serializable]
 public class WeightedElements<T>
 {
-    public List<WeightedElement<T>> elements = new();
+    public List<WeightedElement<T>> Elements = new();
 
     public T GetRandomElement()
     {
-        return elements.GetRandomElement();
+        return Elements.GetRandomElement();
     }
 }
 

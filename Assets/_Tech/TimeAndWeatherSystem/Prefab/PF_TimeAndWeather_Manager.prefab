@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6482823261534746630
+--- !u!1 &2524577779030681450
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4534175587324289509}
-  - component: {fileID: 779032193071566385}
+  - component: {fileID: 36777849313646711}
+  - component: {fileID: 4090246916297594147}
   m_Layer: 0
-  m_Name: PF_ChestManager
+  m_Name: PF_TimeAndWeather_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4534175587324289509
+--- !u!4 &36777849313646711
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6482823261534746630}
+  m_GameObject: {fileID: 2524577779030681450}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 540, y: 960, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &779032193071566385
+--- !u!114 &4090246916297594147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6482823261534746630}
+  m_GameObject: {fileID: 2524577779030681450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e67cf2744255a74c92f31618b8ce5bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 89f83c69ebac93c47bc09a55227ccdf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dontDestroy: 0
-  _chestData: {fileID: 11400000, guid: b6a9264d4dce99f4a9502e0f2be23c34, type: 2}
-  _chestInvoker_ESO: {fileID: 11400000, guid: 11a2aa5143b751646842121e4f463ac3, type: 2}
+  _dontDestroy: 1
+  _timeAndWeather_Data: {fileID: 11400000, guid: 4994a3236b3fca1429ebe5790cb44303, type: 2}
+  _particleOffset: {x: 0, y: 0, z: 5}

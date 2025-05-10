@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "ChestOpenSO", menuName = "CreateScriptable/ChestOpenSo")]
-public class ChestOpen_SO : Variable_Base_SO<ChestSO>
+public class ChestInvoker_ESO : Variable_Base_SO<ChestSO>
 {
-        
+
 }

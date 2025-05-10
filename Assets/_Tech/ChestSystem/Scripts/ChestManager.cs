@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class ChestManager : Singleton<ChestManager>
 {
     [SerializeField] private ChestData _chestData;
+    [SerializeField] private ChestInvoker_ESO _chestInvoker_ESO;
     public static Action<ChestSO> OnChestOpen;
 
     public static List<ChestSO> GetAllAvailableChests()
@@ -13,15 +13,9 @@ public class ChestManager : Singleton<ChestManager>
         return Instance._chestData.GetChests();
     }
 
-    public void addChest(ChestSO chest)
+    public static void OpenChest(ChestSO chest)
     {
-        Debug.Log("test");
-        AddChest(chest, 1);
-    }
-
-    public void RemoveCHest(ChestSO chest)
-    {
-        RemoveChest(chest);
+        Instance._chestInvoker_ESO.Value = chest;
     }
 
     public static void AddChest(ChestSO chest, int addAmount = 1)
