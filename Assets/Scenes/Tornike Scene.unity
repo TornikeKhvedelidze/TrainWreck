@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
-  m_FogMode: 2
-  m_FogDensity: 1
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_Fog: 1
+  m_FogColor: {r: 0.63529414, g: 0.6666667, b: 0.63529414, a: 1}
+  m_FogMode: 1
+  m_FogDensity: 0.079
+  m_LinearFogStart: 16.4
+  m_LinearFogEnd: 88
   m_AmbientSkyColor: {r: 0.1956212, g: 0.21846445, b: 0.26415092, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -29,7 +29,7 @@ RenderSettings:
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 1
   m_FlareStrength: 1
-  m_FlareFadeSpeed: 3
+  m_FlareFadeSpeed: 2.61
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
@@ -10219,8 +10219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f83c69ebac93c47bc09a55227ccdf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 4994a3236b3fca1429ebe5790cb44303, type: 2}
-  particleOffset: {x: 0, y: 30.4, z: 20}
+  _dontDestroy: 1
+  _timeAndWeather_Data: {fileID: 0}
+  _particleOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &2143826067
 Transform:
   m_ObjectHideFlags: 0

@@ -57,7 +57,7 @@ Material:
     m_Ints: []
     m_Floats:
     - ENABLE_BENDING: 1
-    - _Backwards: 0
+    - _Backwards: 0.14376116
     - _BendingStrenght: 1.84
     - _Color: 0
     - _ENABLEBENDING: 1
@@ -67,7 +67,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RotationSpeed: 0
-    - _Sideways: 0
+    - _Sideways: 0.37739038
     - _SpiralRadius: 0.13
     - _SpiralSpeed: 0
     - _SpiralStrenght: 3.72

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EndlessSpawn_Rails_Data
   m_EditorClassIdentifier: 
   _spawnObject:
-    elements:
+    Elements:
     - Element: {fileID: 7680570550678189526, guid: a97750af8ed1fd64896f3d349910689e, type: 3}
       Weight: 100
